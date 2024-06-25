@@ -1,0 +1,457 @@
+|SAD
+Clock => Controller:CTRL_UNIT.CLK
+Clock => Datapath:DATAPATH_UNIT.clk
+nReset => Controller:CTRL_UNIT.RST
+nReset => Datapath:DATAPATH_UNIT.reset
+Start => Controller:CTRL_UNIT.Start_i
+Start => Datapath:DATAPATH_UNIT.start_i
+Addr_in[0] => Datapath:DATAPATH_UNIT.Addr_in[0]
+Addr_in[1] => Datapath:DATAPATH_UNIT.Addr_in[1]
+Addr_in[2] => Datapath:DATAPATH_UNIT.Addr_in[2]
+Addr_in[3] => Datapath:DATAPATH_UNIT.Addr_in[3]
+Addr_in[4] => Datapath:DATAPATH_UNIT.Addr_in[4]
+in_WE_A => Datapath:DATAPATH_UNIT.WE_A
+in_WE_B => Datapath:DATAPATH_UNIT.WE_B
+Data_A[0] => Datapath:DATAPATH_UNIT.Data_A[0]
+Data_A[1] => Datapath:DATAPATH_UNIT.Data_A[1]
+Data_A[2] => Datapath:DATAPATH_UNIT.Data_A[2]
+Data_A[3] => Datapath:DATAPATH_UNIT.Data_A[3]
+Data_A[4] => Datapath:DATAPATH_UNIT.Data_A[4]
+Data_B[0] => Datapath:DATAPATH_UNIT.Data_B[0]
+Data_B[1] => Datapath:DATAPATH_UNIT.Data_B[1]
+Data_B[2] => Datapath:DATAPATH_UNIT.Data_B[2]
+Data_B[3] => Datapath:DATAPATH_UNIT.Data_B[3]
+Data_B[4] => Datapath:DATAPATH_UNIT.Data_B[4]
+SAD_out[0] << Datapath:DATAPATH_UNIT.Data_out[0]
+SAD_out[1] << Datapath:DATAPATH_UNIT.Data_out[1]
+SAD_out[2] << Datapath:DATAPATH_UNIT.Data_out[2]
+SAD_out[3] << Datapath:DATAPATH_UNIT.Data_out[3]
+SAD_out[4] << Datapath:DATAPATH_UNIT.Data_out[4]
+Done_o << Controller:CTRL_UNIT.Done_o
+
+
+|SAD|Controller:CTRL_UNIT
+RST => state~4.DATAIN
+CLK => state~2.DATAIN
+Start_i => Selector1.IN3
+Start_i => Selector3.IN3
+Start_i => state.DATAB
+Start_i => Selector0.IN2
+RE_A <= RE_A.DB_MAX_OUTPUT_PORT_TYPE
+RE_B <= RE_B.DB_MAX_OUTPUT_PORT_TYPE
+WE_C <= WE_C.DB_MAX_OUTPUT_PORT_TYPE
+RE_C <= RE_C.DB_MAX_OUTPUT_PORT_TYPE
+En_i <= En_i.DB_MAX_OUTPUT_PORT_TYPE
+En_j <= En_j.DB_MAX_OUTPUT_PORT_TYPE
+Load_i <= Load_i.DB_MAX_OUTPUT_PORT_TYPE
+Load_j <= Load_j.DB_MAX_OUTPUT_PORT_TYPE
+Zi => Selector2.IN3
+Zi => Selector3.IN1
+Zj => state.DATAB
+Zj => state.DATAB
+Done_o <= Done_o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT
+reset => counter:COUNTERI.nReset
+reset => counter:COUNTERJ.nReset
+clk => counter:COUNTERI.Clock
+clk => counter:COUNTERJ.Clock
+clk => dpmem:DPMEMA.Clk
+clk => dpmem:DPMEMB.Clk
+clk => dpmem:DPMEMC.Clk
+start_i => mux2to1:MUX.Start
+En_i => counter:COUNTERI.En
+load_i => counter:COUNTERI.Load
+En_j => counter:COUNTERJ.En
+load_j => counter:COUNTERJ.Load
+WE_A => dpmem:DPMEMA.We
+RE_A => dpmem:DPMEMA.Re
+WE_B => dpmem:DPMEMB.We
+RE_B => dpmem:DPMEMB.Re
+WE_C => dpmem:DPMEMC.We
+RE_C => dpmem:DPMEMC.Re
+Data_A[0] => dpmem:DPMEMA.Din[0]
+Data_A[1] => dpmem:DPMEMA.Din[1]
+Data_A[2] => dpmem:DPMEMA.Din[2]
+Data_A[3] => dpmem:DPMEMA.Din[3]
+Data_A[4] => dpmem:DPMEMA.Din[4]
+Data_B[0] => dpmem:DPMEMB.Din[0]
+Data_B[1] => dpmem:DPMEMB.Din[1]
+Data_B[2] => dpmem:DPMEMB.Din[2]
+Data_B[3] => dpmem:DPMEMB.Din[3]
+Data_B[4] => dpmem:DPMEMB.Din[4]
+Addr_in[0] => mux2to1:MUX.Addr_in[0]
+Addr_in[1] => mux2to1:MUX.Addr_in[1]
+Addr_in[2] => mux2to1:MUX.Addr_in[2]
+Addr_in[3] => mux2to1:MUX.Addr_in[3]
+Addr_in[4] => mux2to1:MUX.Addr_in[4]
+Zi <= comparator:COMPARATORI.result
+Zj <= comparator:COMPARATORJ.result
+Data_out[0] <= dpmem:DPMEMC.Dout[0]
+Data_out[1] <= dpmem:DPMEMC.Dout[1]
+Data_out[2] <= dpmem:DPMEMC.Dout[2]
+Data_out[3] <= dpmem:DPMEMC.Dout[3]
+Data_out[4] <= dpmem:DPMEMC.Dout[4]
+
+
+|SAD|datapath:DATAPATH_UNIT|comparator:COMPARATORI
+A[0] => LessThan0.IN5
+A[1] => LessThan0.IN4
+A[2] => LessThan0.IN3
+A[3] => LessThan0.IN2
+A[4] => LessThan0.IN1
+B[0] => LessThan0.IN10
+B[1] => LessThan0.IN9
+B[2] => LessThan0.IN8
+B[3] => LessThan0.IN7
+B[4] => LessThan0.IN6
+result <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|comparator:COMPARATORJ
+A[0] => LessThan0.IN5
+A[1] => LessThan0.IN4
+A[2] => LessThan0.IN3
+A[3] => LessThan0.IN2
+A[4] => LessThan0.IN1
+B[0] => LessThan0.IN10
+B[1] => LessThan0.IN9
+B[2] => LessThan0.IN8
+B[3] => LessThan0.IN7
+B[4] => LessThan0.IN6
+result <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|Multiplier:MULTIPLIERi
+A[0] => Mult0.IN4
+A[1] => Mult0.IN3
+A[2] => Mult0.IN2
+A[3] => Mult0.IN1
+A[4] => Mult0.IN0
+B[0] => Mult0.IN9
+B[1] => Mult0.IN8
+B[2] => Mult0.IN7
+B[3] => Mult0.IN6
+B[4] => Mult0.IN5
+Result[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+Result[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+Result[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+Result[3] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+Result[4] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|mux2to1:MUX
+Start => Adder_to_dpmem.OUTPUTSELECT
+Start => Adder_to_dpmem.OUTPUTSELECT
+Start => Adder_to_dpmem.OUTPUTSELECT
+Start => Adder_to_dpmem.OUTPUTSELECT
+Start => Adder_to_dpmem.OUTPUTSELECT
+Addr_in[0] => Adder_to_dpmem.DATAB
+Addr_in[1] => Adder_to_dpmem.DATAB
+Addr_in[2] => Adder_to_dpmem.DATAB
+Addr_in[3] => Adder_to_dpmem.DATAB
+Addr_in[4] => Adder_to_dpmem.DATAB
+Addr_data[0] => Adder_to_dpmem.DATAA
+Addr_data[1] => Adder_to_dpmem.DATAA
+Addr_data[2] => Adder_to_dpmem.DATAA
+Addr_data[3] => Adder_to_dpmem.DATAA
+Addr_data[4] => Adder_to_dpmem.DATAA
+Adder_to_dpmem[0] <= Adder_to_dpmem.DB_MAX_OUTPUT_PORT_TYPE
+Adder_to_dpmem[1] <= Adder_to_dpmem.DB_MAX_OUTPUT_PORT_TYPE
+Adder_to_dpmem[2] <= Adder_to_dpmem.DB_MAX_OUTPUT_PORT_TYPE
+Adder_to_dpmem[3] <= Adder_to_dpmem.DB_MAX_OUTPUT_PORT_TYPE
+Adder_to_dpmem[4] <= Adder_to_dpmem.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|Adder:ADDER1
+A[0] => Add0.IN5
+A[1] => Add0.IN4
+A[2] => Add0.IN3
+A[3] => Add0.IN2
+A[4] => Add0.IN1
+B[0] => Add0.IN10
+B[1] => Add0.IN9
+B[2] => Add0.IN8
+B[3] => Add0.IN7
+B[4] => Add0.IN6
+Sum[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|Adder:ADDER2
+A[0] => Add0.IN5
+A[1] => Add0.IN4
+A[2] => Add0.IN3
+A[3] => Add0.IN2
+A[4] => Add0.IN1
+B[0] => Add0.IN10
+B[1] => Add0.IN9
+B[2] => Add0.IN8
+B[3] => Add0.IN7
+B[4] => Add0.IN6
+Sum[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+Sum[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|AbsSubtractor:ABSSUB
+A[0] => Add0.IN10
+A[1] => Add0.IN9
+A[2] => Add0.IN8
+A[3] => Add0.IN7
+A[4] => Add0.IN6
+B[0] => Add0.IN5
+B[1] => Add0.IN4
+B[2] => Add0.IN3
+B[3] => Add0.IN2
+B[4] => Add0.IN1
+Abs_Result[0] <= Abs_Sub_Result.DB_MAX_OUTPUT_PORT_TYPE
+Abs_Result[1] <= Abs_Sub_Result.DB_MAX_OUTPUT_PORT_TYPE
+Abs_Result[2] <= Abs_Sub_Result.DB_MAX_OUTPUT_PORT_TYPE
+Abs_Result[3] <= Abs_Sub_Result.DB_MAX_OUTPUT_PORT_TYPE
+Abs_Result[4] <= Abs_Sub_Result.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|counter:COUNTERI
+Clock => pre_count[0].CLK
+Clock => pre_count[1].CLK
+Clock => pre_count[2].CLK
+Clock => pre_count[3].CLK
+Clock => pre_count[4].CLK
+nReset => pre_count[0].ACLR
+nReset => pre_count[1].ACLR
+nReset => pre_count[2].ACLR
+nReset => pre_count[3].ACLR
+nReset => pre_count[4].ACLR
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Din[0] => pre_count.DATAB
+Din[1] => pre_count.DATAB
+Din[2] => pre_count.DATAB
+Din[3] => pre_count.DATAB
+Din[4] => pre_count.DATAB
+Dout[0] <= pre_count[0].DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= pre_count[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= pre_count[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= pre_count[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= pre_count[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|counter:COUNTERJ
+Clock => pre_count[0].CLK
+Clock => pre_count[1].CLK
+Clock => pre_count[2].CLK
+Clock => pre_count[3].CLK
+Clock => pre_count[4].CLK
+nReset => pre_count[0].ACLR
+nReset => pre_count[1].ACLR
+nReset => pre_count[2].ACLR
+nReset => pre_count[3].ACLR
+nReset => pre_count[4].ACLR
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+En => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Load => pre_count.OUTPUTSELECT
+Din[0] => pre_count.DATAB
+Din[1] => pre_count.DATAB
+Din[2] => pre_count.DATAB
+Din[3] => pre_count.DATAB
+Din[4] => pre_count.DATAB
+Dout[0] <= pre_count[0].DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= pre_count[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= pre_count[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= pre_count[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= pre_count[4].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|dpmem:DPMEMA
+Clk => M~10.CLK
+Clk => M~0.CLK
+Clk => M~1.CLK
+Clk => M~2.CLK
+Clk => M~3.CLK
+Clk => M~4.CLK
+Clk => M~5.CLK
+Clk => M~6.CLK
+Clk => M~7.CLK
+Clk => M~8.CLK
+Clk => M~9.CLK
+Clk => Dout[0]~reg0.CLK
+Clk => Dout[1]~reg0.CLK
+Clk => Dout[2]~reg0.CLK
+Clk => Dout[3]~reg0.CLK
+Clk => Dout[4]~reg0.CLK
+Clk => M.CLK0
+We => M~10.DATAIN
+We => M.WE
+Re => Dout[0]~reg0.ENA
+Re => Dout[1]~reg0.ENA
+Re => Dout[2]~reg0.ENA
+Re => Dout[3]~reg0.ENA
+Re => Dout[4]~reg0.ENA
+Din[0] => M~9.DATAIN
+Din[0] => M.DATAIN
+Din[1] => M~8.DATAIN
+Din[1] => M.DATAIN1
+Din[2] => M~7.DATAIN
+Din[2] => M.DATAIN2
+Din[3] => M~6.DATAIN
+Din[3] => M.DATAIN3
+Din[4] => M~5.DATAIN
+Din[4] => M.DATAIN4
+ADDR[0] => M~4.DATAIN
+ADDR[0] => M.WADDR
+ADDR[0] => M.RADDR
+ADDR[1] => M~3.DATAIN
+ADDR[1] => M.WADDR1
+ADDR[1] => M.RADDR1
+ADDR[2] => M~2.DATAIN
+ADDR[2] => M.WADDR2
+ADDR[2] => M.RADDR2
+ADDR[3] => M~1.DATAIN
+ADDR[3] => M.WADDR3
+ADDR[3] => M.RADDR3
+ADDR[4] => M~0.DATAIN
+ADDR[4] => M.WADDR4
+ADDR[4] => M.RADDR4
+Dout[0] <= Dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|dpmem:DPMEMB
+Clk => M~10.CLK
+Clk => M~0.CLK
+Clk => M~1.CLK
+Clk => M~2.CLK
+Clk => M~3.CLK
+Clk => M~4.CLK
+Clk => M~5.CLK
+Clk => M~6.CLK
+Clk => M~7.CLK
+Clk => M~8.CLK
+Clk => M~9.CLK
+Clk => Dout[0]~reg0.CLK
+Clk => Dout[1]~reg0.CLK
+Clk => Dout[2]~reg0.CLK
+Clk => Dout[3]~reg0.CLK
+Clk => Dout[4]~reg0.CLK
+Clk => M.CLK0
+We => M~10.DATAIN
+We => M.WE
+Re => Dout[0]~reg0.ENA
+Re => Dout[1]~reg0.ENA
+Re => Dout[2]~reg0.ENA
+Re => Dout[3]~reg0.ENA
+Re => Dout[4]~reg0.ENA
+Din[0] => M~9.DATAIN
+Din[0] => M.DATAIN
+Din[1] => M~8.DATAIN
+Din[1] => M.DATAIN1
+Din[2] => M~7.DATAIN
+Din[2] => M.DATAIN2
+Din[3] => M~6.DATAIN
+Din[3] => M.DATAIN3
+Din[4] => M~5.DATAIN
+Din[4] => M.DATAIN4
+ADDR[0] => M~4.DATAIN
+ADDR[0] => M.WADDR
+ADDR[0] => M.RADDR
+ADDR[1] => M~3.DATAIN
+ADDR[1] => M.WADDR1
+ADDR[1] => M.RADDR1
+ADDR[2] => M~2.DATAIN
+ADDR[2] => M.WADDR2
+ADDR[2] => M.RADDR2
+ADDR[3] => M~1.DATAIN
+ADDR[3] => M.WADDR3
+ADDR[3] => M.RADDR3
+ADDR[4] => M~0.DATAIN
+ADDR[4] => M.WADDR4
+ADDR[4] => M.RADDR4
+Dout[0] <= Dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SAD|datapath:DATAPATH_UNIT|dpmem:DPMEMC
+Clk => M~10.CLK
+Clk => M~0.CLK
+Clk => M~1.CLK
+Clk => M~2.CLK
+Clk => M~3.CLK
+Clk => M~4.CLK
+Clk => M~5.CLK
+Clk => M~6.CLK
+Clk => M~7.CLK
+Clk => M~8.CLK
+Clk => M~9.CLK
+Clk => Dout[0]~reg0.CLK
+Clk => Dout[1]~reg0.CLK
+Clk => Dout[2]~reg0.CLK
+Clk => Dout[3]~reg0.CLK
+Clk => Dout[4]~reg0.CLK
+Clk => M.CLK0
+We => M~10.DATAIN
+We => M.WE
+Re => Dout[0]~reg0.ENA
+Re => Dout[1]~reg0.ENA
+Re => Dout[2]~reg0.ENA
+Re => Dout[3]~reg0.ENA
+Re => Dout[4]~reg0.ENA
+Din[0] => M~9.DATAIN
+Din[0] => M.DATAIN
+Din[1] => M~8.DATAIN
+Din[1] => M.DATAIN1
+Din[2] => M~7.DATAIN
+Din[2] => M.DATAIN2
+Din[3] => M~6.DATAIN
+Din[3] => M.DATAIN3
+Din[4] => M~5.DATAIN
+Din[4] => M.DATAIN4
+ADDR[0] => M~4.DATAIN
+ADDR[0] => M.WADDR
+ADDR[0] => M.RADDR
+ADDR[1] => M~3.DATAIN
+ADDR[1] => M.WADDR1
+ADDR[1] => M.RADDR1
+ADDR[2] => M~2.DATAIN
+ADDR[2] => M.WADDR2
+ADDR[2] => M.RADDR2
+ADDR[3] => M~1.DATAIN
+ADDR[3] => M.WADDR3
+ADDR[3] => M.RADDR3
+ADDR[4] => M~0.DATAIN
+ADDR[4] => M.WADDR4
+ADDR[4] => M.RADDR4
+Dout[0] <= Dout[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= Dout[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= Dout[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= Dout[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= Dout[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

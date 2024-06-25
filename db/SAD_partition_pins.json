@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "SAD_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SAD_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SAD_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SAD_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SAD_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Done_o",
+					"strict" : false
+				},
+				{
+					"name" : "Clock",
+					"strict" : false
+				},
+				{
+					"name" : "Start",
+					"strict" : false
+				},
+				{
+					"name" : "nReset",
+					"strict" : false
+				},
+				{
+					"name" : "in_WE_B",
+					"strict" : false
+				},
+				{
+					"name" : "Data_B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Addr_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in_WE_A",
+					"strict" : false
+				},
+				{
+					"name" : "Data_A[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_B[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_A[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_B[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_A[4]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_B[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_A[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_B[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Data_A[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

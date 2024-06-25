@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Mon Jun 24 22:48:31 2024
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : SAD
+Top-level Entity Name : SAD
+Family : Cyclone IV E
+Total logic elements : 65
+    Total combinational functions : 60
+    Dedicated logic registers : 22
+Total registers : 22
+Total pins : 26
+Total virtual pins : 0
+Total memory bits : 330
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

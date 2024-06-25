@@ -1,0 +1,497 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/18.1/SAD/simulation/modelsim
+Eabssubtractor
+Z1 w1719167115
+Z2 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z3 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z4 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+R0
+Z5 8C:/intelFPGA_lite/18.1/SAD/AbsSubtractor.vhd
+Z6 FC:/intelFPGA_lite/18.1/SAD/AbsSubtractor.vhd
+l0
+L6
+V;^NPDZWV?hW?U]Lb:m2j53
+!s100 f]W8h93bm@a_MWX;42X?81
+Z7 OV;C;10.5b;63
+31
+Z8 !s110 1719324613
+!i10b 1
+Z9 !s108 1719324613.000000
+Z10 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/AbsSubtractor.vhd|
+Z11 !s107 C:/intelFPGA_lite/18.1/SAD/AbsSubtractor.vhd|
+!i113 1
+Z12 o-93 -work work
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R2
+R3
+R4
+DEx4 work 13 abssubtractor 0 22 ;^NPDZWV?hW?U]Lb:m2j53
+l16
+L15
+Vfck>:fhaU2QEXYa;:BI2A3
+!s100 i`A:]1h9VbRhZ66Cef1H23
+R7
+31
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eadder
+Z14 w1719167142
+R2
+R3
+R4
+R0
+Z15 8C:/intelFPGA_lite/18.1/SAD/Adder.vhd
+Z16 FC:/intelFPGA_lite/18.1/SAD/Adder.vhd
+l0
+L7
+V`5l6U;CXCiIXzM:8PWSJW2
+!s100 biX111R`YGgV[_:Z1cQ7R1
+R7
+31
+R8
+!i10b 1
+R9
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/Adder.vhd|
+Z18 !s107 C:/intelFPGA_lite/18.1/SAD/Adder.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 5 adder 0 22 `5l6U;CXCiIXzM:8PWSJW2
+l16
+L15
+V^chi25aUjaBX76Ii<OILY0
+!s100 KoOclWSi5zcQY:IEj7BLR1
+R7
+31
+R8
+!i10b 1
+R9
+R17
+R18
+!i113 1
+R12
+R13
+Ecomparator
+Z19 w1719167165
+Z20 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z21 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R3
+R4
+R0
+Z22 8C:/intelFPGA_lite/18.1/SAD/comparator.vhd
+Z23 FC:/intelFPGA_lite/18.1/SAD/comparator.vhd
+l0
+L7
+VPN^D<PWMbKi:4feY7:Che0
+!s100 dkNNdmYSc1CfNMahgffDE2
+R7
+31
+R8
+!i10b 1
+R9
+Z24 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/comparator.vhd|
+Z25 !s107 C:/intelFPGA_lite/18.1/SAD/comparator.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R20
+R21
+R3
+R4
+DEx4 work 10 comparator 0 22 PN^D<PWMbKi:4feY7:Che0
+l16
+L15
+Vd3lJcC<M93Q2_Taha1T4@2
+!s100 :ajg?gb3<icz5@0Nb8dfo2
+R7
+31
+R8
+!i10b 1
+R9
+R24
+R25
+!i113 1
+R12
+R13
+Econtroller
+Z26 w1719167237
+R20
+R21
+R3
+R4
+R0
+Z27 8C:/intelFPGA_lite/18.1/SAD/Controller.vhd
+Z28 FC:/intelFPGA_lite/18.1/SAD/Controller.vhd
+l0
+L8
+V1_<:d1aNlKLXjSo=`E;J>0
+!s100 6I<OD@YWM;c:PU@nDMW121
+R7
+31
+R8
+!i10b 1
+R9
+Z29 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/Controller.vhd|
+Z30 !s107 C:/intelFPGA_lite/18.1/SAD/Controller.vhd|
+!i113 1
+R12
+R13
+Artl
+R20
+R21
+R3
+R4
+DEx4 work 10 controller 0 22 1_<:d1aNlKLXjSo=`E;J>0
+l24
+L20
+VUO5<iQfFaf:?Wk6><maEg0
+!s100 KDLb00IaBMDDUXfoz928V3
+R7
+31
+R8
+!i10b 1
+R9
+R29
+R30
+!i113 1
+R12
+R13
+Ecounter
+Z31 w1719167264
+R20
+R21
+R3
+R4
+R0
+Z32 8C:/intelFPGA_lite/18.1/SAD/counter.vhd
+Z33 FC:/intelFPGA_lite/18.1/SAD/counter.vhd
+l0
+L8
+V>ADeJ_N^XmGE3nLkaNi4I0
+!s100 ]e62UJQ5i>_XDjPX?]iS[3
+R7
+31
+R8
+!i10b 1
+R9
+Z34 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/counter.vhd|
+Z35 !s107 C:/intelFPGA_lite/18.1/SAD/counter.vhd|
+!i113 1
+R12
+R13
+Abehav
+R20
+R21
+R3
+R4
+DEx4 work 7 counter 0 22 >ADeJ_N^XmGE3nLkaNi4I0
+l18
+L17
+Vn@P1=fAIP5lh];[dAo48e3
+!s100 T`hTRZ7]fX14:;25@6`X32
+R7
+31
+R8
+!i10b 1
+R9
+R34
+R35
+!i113 1
+R12
+R13
+Edatapath
+Z36 w1719170605
+Z37 DPx4 work 5 mylib 0 22 JlWlDVVjd7djk45z^>efQ1
+R2
+R3
+R4
+R0
+Z38 8C:/intelFPGA_lite/18.1/SAD/datapath.vhd
+Z39 FC:/intelFPGA_lite/18.1/SAD/datapath.vhd
+l0
+L6
+VD^__dWEfKfg`Z[N6194PA1
+!s100 ]VC31<MTOWJO4[Nb`YfH40
+R7
+31
+Z40 !s110 1719324614
+!i10b 1
+Z41 !s108 1719324614.000000
+Z42 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/datapath.vhd|
+Z43 !s107 C:/intelFPGA_lite/18.1/SAD/datapath.vhd|
+!i113 1
+R12
+R13
+Artl
+R37
+R2
+R3
+R4
+DEx4 work 8 datapath 0 22 D^__dWEfKfg`Z[N6194PA1
+l42
+L19
+VIW3DloPG1IW`SJ2c`kRES2
+!s100 N0zQ0Y@E3DJ^cgkGB3TY?3
+R7
+31
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 1
+R12
+R13
+Edpmem
+Z44 w1719167325
+R20
+Z45 DPx4 ieee 16 std_logic_signed 0 22 C<aanc0R`<LWPSe[JYRP^3
+R3
+R4
+R0
+Z46 8C:/intelFPGA_lite/18.1/SAD/dpmem.vhd
+Z47 FC:/intelFPGA_lite/18.1/SAD/dpmem.vhd
+l0
+L6
+Vd8d<5=G?C1hDc`b66;D`Y3
+!s100 9]2;CTNF`J7zJ=h7E48jf0
+R7
+31
+R8
+!i10b 1
+R9
+Z48 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/dpmem.vhd|
+Z49 !s107 C:/intelFPGA_lite/18.1/SAD/dpmem.vhd|
+!i113 1
+R12
+R13
+Adpmem_arch
+R20
+R45
+R3
+R4
+DEx4 work 5 dpmem 0 22 d8d<5=G?C1hDc`b66;D`Y3
+l26
+L21
+VeWZSS81mDj02EG^<FZHAC1
+!s100 ]hlLOUh99^`EBV72_hRL=2
+R7
+31
+R8
+!i10b 1
+R9
+R48
+R49
+!i113 1
+R12
+R13
+Emultiplier
+Z50 w1719167357
+R2
+R3
+R4
+R0
+Z51 8C:/intelFPGA_lite/18.1/SAD/Multiplier.vhd
+Z52 FC:/intelFPGA_lite/18.1/SAD/Multiplier.vhd
+l0
+L6
+V2a>BkP2YmPTD_TAnDEkd`3
+!s100 259BT77jDU24BfEN4HDY]2
+R7
+31
+R8
+!i10b 1
+R9
+Z53 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/Multiplier.vhd|
+Z54 !s107 C:/intelFPGA_lite/18.1/SAD/Multiplier.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R2
+R3
+R4
+DEx4 work 10 multiplier 0 22 2a>BkP2YmPTD_TAnDEkd`3
+l15
+L14
+VhIheX=aCB>oCTOkGUdV>I1
+!s100 m:;e1I2P]D]jbd^edDXJf0
+R7
+31
+R8
+!i10b 1
+R9
+R53
+R54
+!i113 1
+R12
+R13
+Emux2to1
+Z55 w1719167385
+R3
+R4
+R0
+Z56 8C:/intelFPGA_lite/18.1/SAD/mux2to1.vhd
+Z57 FC:/intelFPGA_lite/18.1/SAD/mux2to1.vhd
+l0
+L4
+VmjN_n5Z;aBGXj?7Q_ezMB2
+!s100 A0d8U><Nj1?OT]LJRz8=]0
+R7
+31
+R8
+!i10b 1
+R9
+Z58 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/mux2to1.vhd|
+Z59 !s107 C:/intelFPGA_lite/18.1/SAD/mux2to1.vhd|
+!i113 1
+R12
+R13
+Abehavior
+R3
+R4
+DEx4 work 7 mux2to1 0 22 mjN_n5Z;aBGXj?7Q_ezMB2
+l15
+L14
+V:7Z5ek<`5;C0:Sd8>Mc4S3
+!s100 eCNGJ_8@oa6bBcTiIU?aG2
+R7
+31
+R8
+!i10b 1
+R9
+R58
+R59
+!i113 1
+R12
+R13
+Pmylib
+R2
+R3
+R4
+w1719167414
+R0
+8C:/intelFPGA_lite/18.1/SAD/Mylib.vhd
+FC:/intelFPGA_lite/18.1/SAD/Mylib.vhd
+l0
+L6
+VJlWlDVVjd7djk45z^>efQ1
+!s100 Lg2GEIJj<hT3RXM94eY?K0
+R7
+31
+R8
+!i10b 1
+R9
+!s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/Mylib.vhd|
+!s107 C:/intelFPGA_lite/18.1/SAD/Mylib.vhd|
+!i113 1
+R12
+R13
+Esad
+Z60 w1719167088
+R20
+R21
+R2
+R37
+R3
+R4
+R0
+Z61 8C:/intelFPGA_lite/18.1/SAD/SAD.vhd
+Z62 FC:/intelFPGA_lite/18.1/SAD/SAD.vhd
+l0
+L7
+VcfWb29h2Y>C8dcmIU2L861
+!s100 ^TnYlRJ>iRE4T>LP><IRY0
+R7
+31
+R8
+!i10b 1
+R9
+Z63 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/SAD.vhd|
+Z64 !s107 C:/intelFPGA_lite/18.1/SAD/SAD.vhd|
+!i113 1
+R12
+R13
+Artl
+R20
+R21
+R2
+R37
+R3
+R4
+DEx4 work 3 sad 0 22 cfWb29h2Y>C8dcmIU2L861
+l27
+L22
+VQK42T1@fmoE3X?U]mic883
+!s100 _NSzHC36djJ>lD4X:SDh81
+R7
+31
+R8
+!i10b 1
+R9
+R63
+R64
+!i113 1
+R12
+R13
+Esad_tb
+Z65 w1719167531
+R2
+R3
+R4
+R0
+Z66 8C:/intelFPGA_lite/18.1/SAD/SAD_tb.vhd
+Z67 FC:/intelFPGA_lite/18.1/SAD/SAD_tb.vhd
+l0
+L5
+Vm:mj9J>:KWo?z?X1;`RKM3
+!s100 Z[3P4elPo:_;a[88K]7FC0
+R7
+31
+R40
+!i10b 1
+R41
+Z68 !s90 -reportprogress|300|-93|-work|work|C:/intelFPGA_lite/18.1/SAD/SAD_tb.vhd|
+Z69 !s107 C:/intelFPGA_lite/18.1/SAD/SAD_tb.vhd|
+!i113 1
+R12
+R13
+Aarch_tb
+R2
+R3
+R4
+DEx4 work 6 sad_tb 0 22 m:mj9J>:KWo?z?X1;`RKM3
+l34
+L9
+VE?@6;42jV0L>nZ;iH2mn>3
+!s100 0Xc^_PF25f4beDi0Ec?a?3
+R7
+31
+R40
+!i10b 1
+R41
+R68
+R69
+!i113 1
+R12
+R13
